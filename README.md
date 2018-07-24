@@ -28,8 +28,12 @@ cause any issues.
 *Note:* Check the [ansible installer](https://github.com/WhenLamboMoon/docker-zen-node/tree/master/ansible) if you plan on installing multiple nodes
 
 ```
-curl -O https://raw.githubusercontent.com/WhenLamboMoon/docker-zen-node/master/install.sh
+curl -O https://raw.githubusercontent.com/Spiral11/docker-zen-node/test/install.sh
+curl -O https://raw.githubusercontent.com/Spiral11/docker-zen-node/test/shortcuts.sh
+curl -O https://raw.githubusercontent.com/Spiral11/docker-zen-node/test/maintenance.sh
 chmod +x install.sh
+chmod +x shortcuts.sh
+chmod +x maintenance.sh
 ./install.sh <stakeaddr> <email> <fqdn> <region> <nodetype>
 ```
 
