@@ -1,7 +1,7 @@
 # Reset .bashrc to default, in case this script gets run more than once in future
 
 /bin/cp /etc/skel/.bashrc ~/
-source ~/.bashrc
+exec bash
 
 # Add our new shortcut commands
 
@@ -20,6 +20,6 @@ printf "logs() {
 }
 export -f logs\n" "sudo docker logs " >> ~/.bashrc
 
-source ~/.bashrc
+exec bash
 
 echo "Shortcuts Added"
