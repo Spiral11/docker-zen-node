@@ -35,5 +35,7 @@ printf "lz() {
 }
 export -f lz\n" "sudo docker logs zen-node" >> ~/.bashrc
 
+sleep 3
+
 source ~/.bashrc
 echo "source ~/.bashrc"
