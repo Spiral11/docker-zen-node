@@ -1,4 +1,9 @@
-#Add shortcuts to common commands, run as your main user
+# Reset .bashrc to default, in case this script gets run more than once in future
+
+/bin/cp /etc/skel/.bashrc ~/
+source ~/.bashrc
+
+# Add our new shortcut commands
 
 printf "zc() {
   %s \"\$@\"
