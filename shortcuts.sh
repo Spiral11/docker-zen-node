@@ -15,6 +15,11 @@ printf "sc() {
 }
 export -f sc\n" "sudo systemctl " >> ~/.bashrc
 
+printf "logs() {
+   %s \"\$@\"
+}
+export -f logs\n" "sudo docker logs " >> ~/.bashrc
+
 printf "lt() {
   %s \"\$@\"
 }
