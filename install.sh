@@ -28,6 +28,10 @@ fi
 testnet=0
 rpcpassword=$(head -c 32 /dev/urandom | base64)
 
+print_status "Installing JQ & MC"
+
+apt install mc jq -y
+
 print_status "Installing the ZenCash node..."
 
 echo "#########################"
@@ -42,14 +46,14 @@ totalswp=$(free -m | awk '/^Swap:/{print $2}')
 totalm=$(($totalmem + $totalswp))
 if [ $totalm -lt 4000 ]; then
   print_status "Server memory is less then 4GB..."
-  if ! grep -q '/swapfile' /etc/fstab ; then
-    print_status "Creating a 4GB swapfile..."
-    fallocate -l 4G /swapfile
+    print_status "Creating a 2GB swapfile..."
+    sudo swapoff /swapfile
+    sudo rm /swapfile
+    fallocate -l 2G /swapfile
     chmod 600 /swapfile
     mkswap /swapfile
     swapon /swapfile
     echo '/swapfile none swap sw 0 0' >> /etc/fstab
-  fi
 fi
 
 # Populating Cache
@@ -158,8 +162,6 @@ cat << EOF > /mnt/zen/secnode/config.json
  }
 }
 EOF
-# https://github.com/WhenLamboMoon/docker-zen-node/issues/88
-chmod 777 /mnt/zen/secnode/config.json
 
 print_status "Installing zend service..."
 cat <<EOF > /etc/systemd/system/zen-node.service
@@ -243,5 +245,3 @@ fi
 
 print_status "Install Finished"
 echo "Please wait until the blocks are up to date..."
-
-## TODO: Post the shield address back to our API
