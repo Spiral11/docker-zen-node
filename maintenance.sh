@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Update apps / system
 sudo apt-get -y update
 sudo apt-get -y dist-upgrade
