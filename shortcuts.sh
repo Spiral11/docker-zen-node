@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Reset .bashrc to default, in case this script gets run more than once in future
 
 /bin/cp /etc/skel/.bashrc ~/
