@@ -162,6 +162,7 @@ cat << EOF > /mnt/zen/secnode/config.json
  }
 }
 EOF
+mkdir /mnt/zen/secnode/local
 chmod -R 777 /mnt/zen/secnode/
 
 print_status "Installing zend service..."
