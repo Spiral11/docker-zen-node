@@ -31,9 +31,11 @@ cause any issues.
 curl -O https://raw.githubusercontent.com/Spiral11/docker-zen-node/test/install.sh
 curl -O https://raw.githubusercontent.com/Spiral11/docker-zen-node/test/shortcuts.sh
 curl -O https://raw.githubusercontent.com/Spiral11/docker-zen-node/test/maintenance.sh
+curl -O https://raw.githubusercontent.com/Spiral11/docker-zen-node/test/sendzen.sh
 chmod +x install.sh
 chmod +x shortcuts.sh
 chmod +x maintenance.sh
+chmod +x sendzen.sh
 ./install.sh <stakeaddr> <email> <fqdn> <region> <nodetype>
 ```
 
